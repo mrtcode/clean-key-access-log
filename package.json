@@ -1,0 +1,16 @@
+{
+  "name": "clean-key-access-log",
+  "version": "0.0.1",
+  "description": "Clean keyAccessLog table",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martynas Bagdonas",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "config": "^1.30.0",
+    "mysql2": "^1.5.3",
+    "through2": "^2.0.3"
+  }
+}
