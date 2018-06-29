@@ -62,15 +62,14 @@ async function cleanKeys() {
 				.stream({highWaterMark: 1000})
 				.pipe(through2({objectMode: true}, async function (row, enc, next) {
 					keyNr++;
-					try {
-						let keyRowsDeleted = await cleanKey(row.keyID);
-						if (keyRowsDeleted) {
-							console.log({keyNr, keyID: row.keyID, keyRowsDeleted});
-						}
+					
+					if (keyNr % 10000 === 0) {
+						console.log(keyNr);
 					}
-					catch (err) {
-						reject(err);
-					}
+					
+					// await new Promise(function (resolve) {
+					// 	setTimeout(resolve, 1000);
+					// });
 					
 					next();
 				}))
